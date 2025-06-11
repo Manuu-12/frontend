@@ -1,40 +1,40 @@
-<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #000000 0%, #333333 100%) !important;">
+<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #FFB6C1 0%, #FFC0CB 100%) !important;">
 </div>
 <div class="container-fluid mt--7">
   <div class="row">
     <div class="col">
-      <div class="card shadow" style="background-color: #222222 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;">
-        <div class="card-header bg-transparent" style="background-color: #333333 !important; border-bottom: 1px solid #444444;">
-          <h3 class="mb-0" style="color: #FFD700 !important;">Especialidad maquinaria</h3>
-          <button class="btn float-right" (click)="navigateToCreate()" style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Crear Especialidad maquinaria</button>
+      <div class="card shadow" style="background-color: #FFF0F5 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(255, 182, 193, 0.4) !important;">
+        <div class="card-header bg-transparent" style="background-color: #FFD1DC !important; border-bottom: 1px solid #FFC0CB;">
+          <h3 class="mb-0" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">Especialidad maquinaria</h3>
+          <button class="btn float-right" (click)="navigateToCreate()" style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">Crear Especialidad maquinaria</button>
         </div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table align-items-center table-flush">
-              <thead class="thead-light" style="background-color: #333333 !important;">
+              <thead class="thead-light" style="background-color: #FFD1DC !important;">
                 <tr>
-                  <th scope="col" style="color: #000000 !important;">ID</th>
-                  <th scope="col" style="color: #000000 !important;">ID Tipo Servicio</th>
-                  <th scope="col" style="color: #000000 !important;">ID Máquina</th>
-                  <th scope="col" style="color: #000000 !important;">ID Especialidad</th>
-                  <th scope="col" style="color: #000000 !important;">Tipo Trabajo</th>
-                  <th scope="col" style="color: #000000 !important;">Acciones</th>
+                  <th scope="col" style="color: #8B008B !important; font-family: 'Open Sans', sans-serif;">ID</th>
+                  <th scope="col" style="color: #8B008B !important; font-family: 'Open Sans', sans-serif;">ID Tipo Servicio</th>
+                  <th scope="col" style="color: #8B008B !important; font-family: 'Open Sans', sans-serif;">ID Máquina</th>
+                  <th scope="col" style="color: #8B008B !important; font-family: 'Open Sans', sans-serif;">ID Especialidad</th>
+                  <th scope="col" style="color: #8B008B !important; font-family: 'Open Sans', sans-serif;">Tipo Trabajo</th>
+                  <th scope="col" style="color: #8B008B !important; font-family: 'Open Sans', sans-serif;">Acciones</th>
                 </tr>
               </thead>
-              <tbody style="background-color: #222222 !important;">
-                <tr *ngFor="let item of especialidadesmaquinaria" style="color: #AAAAAA !important;">
+              <tbody style="background-color: #FFF0F5 !important;">
+                <tr *ngFor="let item of especialidadesmaquinaria" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
                   <td>{{ item.id }}</td>
                   <td>{{ item.tipo_servicio_id }}</td>
                   <td>{{ item.maquina_id }}</td>
                   <td>{{ item.especialidad_id}}</td>
                   <td>{{ item.tipo_trabajo }}</td>
                   <td>
-                    <button class="btn btn-sm" (click)="edit(item.id)" style="background-color: #444444 !important; border-color: #555555 !important; color: #FFD700 !important; transition: all 0.3s ease;">Editar</button>
-                    <button class="btn btn-sm ml-1" (click)="delete(item.id)" style="background-color: #444444 !important; border-color: #555555 !important; color: #FFD700 !important; transition: all 0.3s ease;">Eliminar</button>
+                    <button class="btn btn-sm" (click)="edit(item.id)" style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(255, 105, 180, 0.2);">Editar</button>
+                    <button class="btn btn-sm ml-1" (click)="delete(item.id)" style="background-color: #FF1493 !important; border-color: #FF1493 !important; color: #ffffff !important; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(255, 20, 147, 0.2);">Eliminar</button>
                   </td>
                 </tr>
                 <tr *ngIf="especialidadesmaquinaria.length === 0">
-                  <td colspan="6" class="text-center" style="color: #AAAAAA !important;">No hay especialidades de maquinaria disponibles.</td>
+                  <td colspan="6" class="text-center" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">No hay especialidades de maquinaria disponibles.</td>
                 </tr>
               </tbody>
             </table>

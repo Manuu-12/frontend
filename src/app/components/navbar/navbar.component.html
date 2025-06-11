@@ -1,54 +1,54 @@
-<nav class="navbar navbar-top navbar-expand-md bg-dark" id="navbar-main" style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d); border-bottom: 1px solid #444; transition: all 0.3s;">
+<nav class="navbar navbar-top navbar-expand-md" id="navbar-main" style="background: linear-gradient(87deg, #D8BFD8 0%, #F8C8DC 100%) !important; border-bottom: 1px solid #B088B0; transition: all 0.3s;">
   <div class="container-fluid">
-    <!-- Brand -->
-    <a class="h4 mb-0 text-light text-uppercase d-none d-lg-inline-block" routerLinkActive="active" [routerLink]="['/tablero']" style="font-family: 'Playfair Display', serif; color: #d4af37;">{{getTitle()}}</a>
-    <!-- Form -->
-    <form class="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+    <a class="h4 mb-0 text-uppercase d-none d-lg-inline-block" routerLinkActive="active" [routerLink]="['/tablero']" style="font-family: 'Playfair Display', serif; color: #000000 !important;">{{getTitle()}}</a>
+    <form class="navbar-search form-inline mr-3 d-none d-md-flex ml-lg-auto">
       <div class="form-group mb-0" [ngClass]="{ 'focused': focus === true }">
-        <div class="input-group input-group-alternative" style="background-color: #333; border: 1px solid #444; border-radius: 20px;">
+        <div class="input-group input-group-alternative" style="background-color: #B088B0; border: 1px solid #D8BFD8; border-radius: 20px;">
           <div class="input-group-prepend">
-            <span class="input-group-text" style="background-color: transparent; border: none; color: #d4af37;"><i class="fas fa-search"></i></span>
+            <span class="input-group-text" style="background-color: transparent; border: none; color: #000000;"><i class="fas fa-search"></i></span>
           </div>
-          <input class="form-control text-light" placeholder="Search" type="text" (focus)="focus = true" (blur)="focus = false" style="background-color: transparent; border: none;">
+          <input class="form-control" placeholder="Search" type="text" (focus)="focus = true" (blur)="focus = false" style="background-color: transparent; border: none; color: #000000;">
         </div>
       </div>
     </form>
-    <!-- User -->
     <ul class="navbar-nav align-items-center d-none d-md-flex">
       <li class="nav-item" ngbDropdown placement="bottom-right">
-        <a class="nav-link pr-0 text-light" role="button" ngbDropdownToggle style="transition: all 0.3s;">
+        <a class="nav-link pr-0" role="button" ngbDropdownToggle style="transition: all 0.3s; color: #000000 !important;">
           <div class="media align-items-center">
-            <span class="avatar avatar-sm rounded-circle" style="border: 2px solid #d4af37;">
+            <span class="avatar avatar-sm rounded-circle" style="border: 2px solid #000000;">
               <img alt="Image placeholder" src="assets/img/theme/team-4-800x800.jpg" style="filter: brightness(0.9);">
             </span>
             <div class="media-body ml-2 d-none d-lg-block">
-              <span class="mb-0 text-sm font-weight-bold text-light" style="font-family: 'Lora', serif;">Jessica Jones</span>
+              <span class="mb-0 text-sm font-weight-bold" style="font-family: 'Lora', serif; color: #000000 !important;">Jessica Jones</span>
+              <span class="badge badge-pill ms-2" style="font-size: 0.75rem; padding: 0.3em 0.6em; border-radius: 1rem; background-color: #000000!important; color: #F8C8DC!important; margin-left: 5px;">
+                Máquinas API: {{ machineCallCount$ | async }}
+              </span>
             </div>
           </div>
         </a>
-        <div class="dropdown-menu-arrow dropdown-menu-right bg-dark text-light" ngbDropdownMenu style="border: 1px solid #444; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu style="border: 1px solid #B088B0; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); background-color: #D8BFD8 !important;">
           <div class="dropdown-header noti-title">
-            <h6 class="text-overflow m-0 text-light" style="font-family: 'Playfair Display', serif;">Welcome!</h6>
+            <h6 class="text-overflow m-0" style="font-family: 'Playfair Display', serif; color: #000000 !important;">Welcome!</h6>
           </div>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item text-light" style="font-family: 'Lora', serif;">
-            <i class="ni ni-single-02" style="color: #d4af37;"></i>
+          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item" style="font-family: 'Lora', serif; color: #000000 !important;">
+            <i class="ni ni-single-02" style="color: #000000;"></i>
             <span>My profile</span>
           </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item text-light" style="font-family: 'Lora', serif;">
-            <i class="ni ni-settings-gear-65" style="color: #d4af37;"></i>
+          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item" style="font-family: 'Lora', serif; color: #000000 !important;">
+            <i class="ni ni-settings-gear-65" style="color: #000000;"></i>
             <span>Settings</span>
           </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item text-light" style="font-family: 'Lora', serif;">
-            <i class="ni ni-calendar-grid-58" style="color: #d4af37;"></i>
+          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item" style="font-family: 'Lora', serif; color: #000000 !important;">
+            <i class="ni ni-calendar-grid-58" style="color: #000000;"></i>
             <span>Activity</span>
           </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item text-light" style="font-family: 'Lora', serif;">
-            <i class="ni ni-support-16" style="color: #d4af37;"></i>
+          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item" style="font-family: 'Lora', serif; color: #000000 !important;">
+            <i class="ni ni-support-16" style="color: #000000;"></i>
             <span>Support</span>
           </a>
-          <div class="dropdown-divider" style="border-color: #444;"></div>
-          <a href="#!" class="dropdown-item text-light" style="font-family: 'Lora', serif;">
-            <i class="ni ni-user-run" style="color: #d4af37;"></i>
+          <div class="dropdown-divider" style="border-color: #B088B0;"></div>
+          <a href="#!" class="dropdown-item" style="font-family: 'Lora', serif; color: #000000 !important;">
+            <i class="ni ni-user-run" style="color: #000000;"></i>
             <span>Logout</span>
           </a>
         </div>

@@ -1,127 +1,127 @@
-<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #000000 0%, #333333 100%) !important;">
+<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #D8BFD8 0%, #F8C8DC 100%) !important;">
 </div>
 <div class="container-fluid mt--7">
   <div class="row">
     <div class="col">
-      <div class="card shadow" style="background-color: #222222 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;">
-        <div class="card-header bg-transparent" style="background-color: #333333 !important; border-bottom: 1px solid #444444;">
-          <h3 class="mb-0" *ngIf="mode==1" style="color: #FFD700 !important;">Detalle</h3>
-          <h3 class="mb-0" *ngIf="mode==2" style="color: #FFD700 !important;">Creación</h3>
-          <h3 class="mb-0" *ngIf="mode==3" style="color: #FFD700 !important;">Actualización</h3>
+      <div class="card shadow" style="background-color: #D8BFD8 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;">
+        <div class="card-header bg-transparent" style="background-color: #D8BFD8 !important; border-bottom: 1px solid #B088B0;">
+          <h3 class="mb-0" *ngIf="mode==1" style="color: #F8C8DC !important;">Detalle</h3>
+          <h3 class="mb-0" *ngIf="mode==2" style="color: #F8C8DC !important;">Creación</h3>
+          <h3 class="mb-0" *ngIf="mode==3" style="color: #F8C8DC !important;">Actualización</h3>
         </div>
         <form class="form" [formGroup]="theFormGroup">
           <div class="card-body container">
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">ID</div>
               <div class="col-9">
                 <input type="text" class="form-control" [(ngModel)]="servicio.id" formControlName="id" [disabled]="true"
-                       style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                       style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important; opacity: 0.7; cursor: not-allowed;">
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Costo</div>
               <div class="col-9">
                 <input type="number" class="form-control" [(ngModel)]="servicio.costo"
                        formControlName="costo" [disabled]="mode==1"
-                       style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                       style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                 <div *ngIf="theFormGroup.get('costo')?.errors && (theFormGroup.get('costo')?.dirty || theFormGroup.get('costo')?.touched || trySend)">
-                  <strong *ngIf="theFormGroup.get('costo')?.errors?.['required']" class="msnError" style="color: #dc3545 !important;">Requerido</strong>
-                  <strong *ngIf="theFormGroup.get('costo')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important;">Mínimo {{ theFormGroup.get('costo')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
-                  <strong *ngIf="theFormGroup.get('costo')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important;">Máximo {{ theFormGroup.get('costo')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('costo')?.errors?.['required']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Requerido</strong>
+                  <strong *ngIf="theFormGroup.get('costo')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Mínimo {{ theFormGroup.get('costo')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('costo')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Máximo {{ theFormGroup.get('costo')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
                 </div>
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Fecha inicio</div>
               <div class="col-9">
                 <input type="date" class="form-control" [(ngModel)]="servicio.f_inicio"
                        formControlName="f_inicio" [disabled]="mode==1"
-                       style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                       style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                 <div *ngIf="theFormGroup.get('f_inicio')?.errors && (theFormGroup.get('f_inicio')?.dirty || theFormGroup.get('f_inicio')?.touched || trySend)">
-                  <strong *ngIf="theFormGroup.get('f_inicio')?.errors?.['required']" class="msnError" style="color: #dc3545 !important;">Requerido</strong>
+                  <strong *ngIf="theFormGroup.get('f_inicio')?.errors?.['required']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Requerido</strong>
                 </div>
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Fecha fin</div>
               <div class="col-9">
                 <input type="date" class="form-control" [(ngModel)]="servicio.f_fin"
                        formControlName="f_fin" [disabled]="mode==1"
-                       style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                       style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                 <div *ngIf="theFormGroup.get('f_fin')?.errors && (theFormGroup.get('f_fin')?.dirty || theFormGroup.get('f_fin')?.touched || trySend)">
-                  <strong *ngIf="theFormGroup.get('f_fin')?.errors?.['required']" class="msnError" style="color: #dc3545 !important;">Requerido</strong>
+                  <strong *ngIf="theFormGroup.get('f_fin')?.errors?.['required']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Requerido</strong>
                 </div>
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Prioridad</div>
               <div class="col-9">
                 <input type="text" class="form-control" [(ngModel)]="servicio.prioridad"
                        formControlName="prioridad" [disabled]="mode==1"
-                       style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                       style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                 <div *ngIf="theFormGroup.get('prioridad')?.errors && (theFormGroup.get('prioridad')?.dirty || theFormGroup.get('prioridad')?.touched || trySend)">
-                  <strong *ngIf="theFormGroup.get('prioridad')?.errors?.['required']" class="msnError" style="color: #dc3545 !important;">Requerido</strong>
-                  <strong *ngIf="theFormGroup.get('prioridad')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important;">Mínimo {{ theFormGroup.get('prioridad')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
-                  <strong *ngIf="theFormGroup.get('prioridad')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important;">Máximo {{ theFormGroup.get('prioridad')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('prioridad')?.errors?.['required']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Requerido</strong>
+                  <strong *ngIf="theFormGroup.get('prioridad')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Mínimo {{ theFormGroup.get('prioridad')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('prioridad')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Máximo {{ theFormGroup.get('prioridad')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
                 </div>
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Tipo</div>
               <div class="col-9">
                 <input type="text" class="form-control" [(ngModel)]="servicio.tipo" formControlName="tipo" [disabled]="mode==1"
-                       style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                       style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                 <div *ngIf="theFormGroup.get('tipo')?.errors && (theFormGroup.get('tipo')?.dirty || theFormGroup.get('tipo')?.touched || trySend)">
-                  <strong *ngIf="theFormGroup.get('tipo')?.errors?.['required']" class="msnError" style="color: #dc3545 !important;">Requerido</strong>
-                  <strong *ngIf="theFormGroup.get('tipo')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important;">Mínimo {{ theFormGroup.get('tipo')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
-                  <strong *ngIf="theFormGroup.get('tipo')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important;">Máximo {{ theFormGroup.get('tipo')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('tipo')?.errors?.['required']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Requerido</strong>
+                  <strong *ngIf="theFormGroup.get('tipo')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Mínimo {{ theFormGroup.get('tipo')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('tipo')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Máximo {{ theFormGroup.get('tipo')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
                 </div>
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Estado</div>
               <div class="col-9">
                 <input type="text" class="form-control" [(ngModel)]="servicio.estado"
                        formControlName="estado" [disabled]="mode==1"
-                       style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                       style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                 <div *ngIf="theFormGroup.get('estado')?.errors && (theFormGroup.get('estado')?.dirty || theFormGroup.get('estado')?.touched || trySend)">
-                  <strong *ngIf="theFormGroup.get('estado')?.errors?.['required']" class="msnError" style="color: #dc3545 !important;">Requerido</strong>
-                  <strong *ngIf="theFormGroup.get('estado')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important;">Mínimo {{ theFormGroup.get('estado')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
-                  <strong *ngIf="theFormGroup.get('estado')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important;">Máximo {{ theFormGroup.get('estado')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('estado')?.errors?.['required']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Requerido</strong>
+                  <strong *ngIf="theFormGroup.get('estado')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Mínimo {{ theFormGroup.get('estado')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('estado')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Máximo {{ theFormGroup.get('estado')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
                 </div>
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Ubicación</div>
               <div class="col-9">
                 <input type="text" class="form-control" [(ngModel)]="servicio.ubicacion"
                        formControlName="ubicacion" [disabled]="mode==1"
-                       style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                       style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                 <div *ngIf="theFormGroup.get('ubicacion')?.errors && (theFormGroup.get('ubicacion')?.dirty || theFormGroup.get('ubicacion')?.touched || trySend)">
-                  <strong *ngIf="theFormGroup.get('ubicacion')?.errors?.['required']" class="msnError" style="color: #dc3545 !important;">Requerido</strong>
-                  <strong *ngIf="theFormGroup.get('ubicacion')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important;">Mínimo {{ theFormGroup.get('ubicacion')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
-                  <strong *ngIf="theFormGroup.get('ubicacion')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important;">Máximo {{ theFormGroup.get('ubicacion')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('ubicacion')?.errors?.['required']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Requerido</strong>
+                  <strong *ngIf="theFormGroup.get('ubicacion')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Mínimo {{ theFormGroup.get('ubicacion')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('ubicacion')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Máximo {{ theFormGroup.get('ubicacion')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
                 </div>
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Resumen</div>
               <div class="col-9">
                 <input type="text" class="form-control" [(ngModel)]="servicio.resumen"
                        formControlName="resumen" [disabled]="mode==1"
-                       style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
-                <strong *ngIf="theFormGroup.get('resumen')?.errors?.['required']" class="msnError" style="color: #dc3545 !important;">Requerido</strong>
+                       style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                 <div *ngIf="theFormGroup.get('resumen')?.errors && (theFormGroup.get('resumen')?.dirty || theFormGroup.get('resumen')?.touched || trySend)">
-                  <strong *ngIf="theFormGroup.get('resumen')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important;">Mínimo {{ theFormGroup.get('resumen')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
-                  <strong *ngIf="theFormGroup.get('resumen')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important;">Máximo {{ theFormGroup.get('resumen')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('resumen')?.errors?.['required']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Requerido</strong>
+                  <strong *ngIf="theFormGroup.get('resumen')?.errors?.['minlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Mínimo {{ theFormGroup.get('resumen')?.errors?.['minlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="theFormGroup.get('resumen')?.errors?.['maxlength']" class="msnError" style="color: #dc3545 !important; font-weight: bold; font-size: 0.85rem; margin-top: 0.25rem; display: block;">Máximo {{ theFormGroup.get('resumen')?.errors?.['maxlength']?.requiredLength }} caracteres</strong>
                 </div>
               </div>
             </div>
@@ -129,9 +129,22 @@
             <div class="row">
               <div class="col-3"></div>
               <div class="col-9">
-                <button *ngIf="mode==1" class="btn btn-block" (click)="back()" style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Volver</button>
-                <button *ngIf="mode==2" class="btn btn-block" (click)="create()" [disabled]="theFormGroup.invalid && trySend" style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Crear</button>
-                <button *ngIf="mode==3" class="btn btn-block" (click)="update()" [disabled]="theFormGroup.invalid && trySend" style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Actualizar</button>
+                <button *ngIf="mode==1" class="btn btn-block" (click)="back()"
+                        style="background-color: #F8C8DC !important; border-color: #F8C8DC !important; color: #B088B0 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Volver</button>
+                <button *ngIf="mode==2" class="btn btn-block" (click)="create()" [disabled]="theFormGroup.invalid && trySend"
+                        [style.background-color]="(theFormGroup.invalid && trySend) ? '#B088B0' : '#F8C8DC'"
+                        [style.border-color]="(theFormGroup.invalid && trySend) ? '#B088B0' : '#F8C8DC'"
+                        [style.color]="(theFormGroup.invalid && trySend) ? '#D8BFD8' : '#B088B0'"
+                        [style.cursor]="(theFormGroup.invalid && trySend) ? 'not-allowed' : 'pointer'"
+                        [style.opacity]="(theFormGroup.invalid && trySend) ? '0.7' : '1'"
+                        style="font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Crear</button>
+                <button *ngIf="mode==3" class="btn btn-block" (click)="update()" [disabled]="theFormGroup.invalid && trySend"
+                        [style.background-color]="(theFormGroup.invalid && trySend) ? '#B088B0' : '#F8C8DC'"
+                        [style.border-color]="(theFormGroup.invalid && trySend) ? '#B088B0' : '#F8C8DC'"
+                        [style.color]="(theFormGroup.invalid && trySend) ? '#D8BFD8' : '#B088B0'"
+                        [style.cursor]="(theFormGroup.invalid && trySend) ? 'not-allowed' : 'pointer'"
+                        [style.opacity]="(theFormGroup.invalid && trySend) ? '0.7' : '1'"
+                        style="font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Actualizar</button>
               </div>
             </div>
           </div>

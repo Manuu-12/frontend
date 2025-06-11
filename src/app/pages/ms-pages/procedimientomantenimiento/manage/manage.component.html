@@ -1,32 +1,32 @@
-<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #000000 0%, #333333 100%) !important;">
+<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #D8BFD8 0%, #F8C8DC 100%) !important;">
 </div>
 <div class="container-fluid mt--7">
   <div class="row">
     <div class="col">
       <div class="card shadow"
-        style="background-color: #222222 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;">
+        style="background-color: #D8BFD8 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;">
         <div class="card-header bg-transparent"
-          style="background-color: #333333 !important; border-bottom: 1px solid #444444;">
-          <h3 class="mb-0" *ngIf="mode==1" style="color: #FFD700 !important;">Detalle Procedimiento-Mantenimiento</h3>
-          <h3 class="mb-0" *ngIf="mode==2" style="color: #FFD700 !important;">Crear Procedimiento-Mantenimiento</h3>
-          <h3 class="mb-0" *ngIf="mode==3" style="color: #FFD700 !important;">Actualizar Procedimiento-Mantenimiento
+          style="background-color: #D8BFD8 !important; border-bottom: 1px solid #B088B0;">
+          <h3 class="mb-0" *ngIf="mode==1" style="color: #F8C8DC !important;">Detalle Procedimiento-Mantenimiento</h3>
+          <h3 class="mb-0" *ngIf="mode==2" style="color: #F8C8DC !important;">Crear Procedimiento-Mantenimiento</h3>
+          <h3 class="mb-0" *ngIf="mode==3" style="color: #F8C8DC !important;">Actualizar Procedimiento-Mantenimiento
           </h3>
         </div>
         <form class="form" [formGroup]="theFormGroup">
           <div class="card-body container">
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">ID</div>
               <div class="col-9">
                 <input type="text" class="form-control" formControlName="id" disabled
-                  style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                  style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important; opacity: 0.7; cursor: not-allowed;">
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Procedimiento</div>
               <div class="col-9">
                 <select class="form-control" formControlName="procedimiento_id" [disabled]="mode==1"
-                  style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                  style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                   <option value="" disabled>Seleccione un procedimiento</option>
                   <option *ngFor="let procedimiento of procedimientos" [value]="procedimiento.id">
                     {{ procedimiento.nombre}}
@@ -40,11 +40,11 @@
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Mantenimiento</div>
               <div class="col-9">
                 <select class="form-control" formControlName="mantenimiento_id" [disabled]="mode==1"
-                  style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                  style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                   <option value="" disabled>Seleccione un mantenimiento</option>
                   <option *ngFor="let mantenimiento of mantenimientos" [value]="mantenimiento.id">
                     {{ mantenimiento.id }}
@@ -58,11 +58,11 @@
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #000000 !important;">
               <div class="col-3">Estado</div>
               <div class="col-9">
                 <select class="form-control" formControlName="estado" [disabled]="mode==1"
-                  style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                  style="background-color: #F8C8DC !important; border: 1px solid #B088B0 !important; color: #000000 !important;">
                   <option value="" disabled>Seleccione un estado</option>
                   <option value="Pendiente">Pendiente</option>
                   <option value="En Proceso">En Proceso</option>
@@ -88,13 +88,13 @@
               <div class="col-3"></div>
               <div class="col-9">
                 <button *ngIf="mode==1" class="btn btn-block" (click)="back()"
-                  style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Volver</button>
+                  style="background-color: #000000 !important; border-color: #000000 !important; color: #F8C8DC !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Volver</button>
                 <button *ngIf="mode==2" class="btn btn-block" (click)="create()"
                   [disabled]="theFormGroup.invalid && trySend"
-                  style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Crear</button>
+                  style="background-color: #000000 !important; border-color: #000000 !important; color: #F8C8DC !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Crear</button>
                 <button *ngIf="mode==3" class="btn btn-block" (click)="update()"
                   [disabled]="theFormGroup.invalid && trySend"
-                  style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Actualizar</button>
+                  style="background-color: #000000 !important; border-color: #000000 !important; color: #F8C8DC !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Actualizar</button>
               </div>
             </div>
           </div>

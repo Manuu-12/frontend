@@ -1,61 +1,61 @@
-<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #000000 0%, #333333 100%) !important;">
+<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #FFB6C1 0%, #FFC0CB 100%) !important;">
 </div>
 <div class="container-fluid mt--7">
   <div class="row">
     <div class="col">
       <div class="card shadow"
-        style="background-color: #222222 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;">
+        style="background-color: #FFF0F5 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(255, 182, 193, 0.4) !important;">
         <div class="card-header bg-transparent"
-          style="background-color: #333333 !important; border-bottom: 1px solid #444444;">
-          <h3 class="mb-0" *ngIf="mode==1" style="color: #FFD700 !important;">Detalle Operario-Especialidad</h3>
-          <h3 class="mb-0" *ngIf="mode==2" style="color: #FFD700 !important;">Crear Operario-Especialidad</h3>
-          <h3 class="mb-0" *ngIf="mode==3" style="color: #FFD700 !important;">Actualizar Operario-Especialidad</h3>
+          style="background-color: #FFD1DC !important; border-bottom: 1px solid #FFC0CB;">
+          <h3 class="mb-0" *ngIf="mode==1" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">Detalle Operario-Especialidad</h3>
+          <h3 class="mb-0" *ngIf="mode==2" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">Crear Operario-Especialidad</h3>
+          <h3 class="mb-0" *ngIf="mode==3" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">Actualizar Operario-Especialidad</h3>
         </div>
         <div class="card-body container">
-          <div class="row" style="color: #AAAAAA !important;">
+          <div class="row" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
             <div class="col-3">ID</div>
             <div class="col-9">
               <input type="number" class="form-control" [(ngModel)]="operarioespecialidad.id" disabled
-                style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
             </div>
           </div>
           <br>
-          <div class="row" style="color: #AAAAAA !important;">
+          <div class="row" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
             <div class="col-3">Operario</div>
             <div class="col-9">
               <select class="form-control" [(ngModel)]="operarioespecialidad.operario_id" [disabled]="mode==1"
-                style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
-                <option value="" disabled>Seleccione un operario</option>
-                <option *ngFor="let operario of operarios" [value]="operario.id">
+                style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
+                <option value="" disabled style="background-color: #FCEFF2 !important; color: #DDA0DD !important;">Seleccione un operario</option>
+                <option *ngFor="let operario of operarios" [value]="operario.id" style="background-color: #FCEFF2 !important; color: #8B008B !important;">
                   {{ operario.id }}
                 </option>
               </select>
             </div>
           </div>
           <br>
-          <div class="row" style="color: #AAAAAA !important;">
+          <div class="row" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
             <div class="col-3">Especialidad</div>
             <div class="col-9">
               <select class="form-control" [(ngModel)]="operarioespecialidad.especialidad_id" [disabled]="mode==1"
-                style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
-                <option value="" disabled>Seleccione una especialidad</option>
-                <option *ngFor="let especialidad of especialidades" [value]="especialidad.id">
+                style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
+                <option value="" disabled style="background-color: #FCEFF2 !important; color: #DDA0DD !important;">Seleccione una especialidad</option>
+                <option *ngFor="let especialidad of especialidades" [value]="especialidad.id" style="background-color: #FCEFF2 !important; color: #8B008B !important;">
                   {{ especialidad.nombre || 'Sin nombre' }}
                 </option>
               </select>
             </div>
           </div>
           <br>
-          <div class="row" style="color: #AAAAAA !important;">
+          <div class="row" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
             <div class="col-3">Nivel Experiencia</div>
             <div class="col-9">
               <select class="form-control" [(ngModel)]="operarioespecialidad.nivel_experiencia" [disabled]="mode==1"
-                style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
-                <option value="" disabled>Seleccione un nivel</option>
-                <option value="Principiante">Principiante</option>
-                <option value="Intermedio">Intermedio</option>
-                <option value="Avanzado">Avanzado</option>
-                <option value="Experto">Experto</option>
+                style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
+                <option value="" disabled style="background-color: #FCEFF2 !important; color: #DDA0DD !important;">Seleccione un nivel</option>
+                <option value="Principiante" style="background-color: #FCEFF2 !important; color: #8B008B !important;">Principiante</option>
+                <option value="Intermedio" style="background-color: #FCEFF2 !important; color: #8B008B !important;">Intermedio</option>
+                <option value="Avanzado" style="background-color: #FCEFF2 !important; color: #8B008B !important;">Avanzado</option>
+                <option value="Experto" style="background-color: #FCEFF2 !important; color: #8B008B !important;">Experto</option>
               </select>
             </div>
           </div>
@@ -64,11 +64,11 @@
             <div class="col-3"></div>
             <div class="col-9">
               <button *ngIf="mode==1" class="btn btn-block" (click)="back()"
-                style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Volver</button>
+                style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">Volver</button>
               <button *ngIf="mode==2" class="btn btn-block" (click)="create()"
-                style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Crear</button>
+                style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">Crear</button>
               <button *ngIf="mode==3" class="btn btn-block" (click)="update()"
-                style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Actualizar</button>
+                style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">Actualizar</button>
             </div>
           </div>
         </div>

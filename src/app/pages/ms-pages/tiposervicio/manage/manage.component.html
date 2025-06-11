@@ -1,46 +1,46 @@
-<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #000000 0%, #333333 100%) !important;">
+<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #FFB6C1 0%, #FFC0CB 100%) !important;">
 </div>
 <div class="container-fluid mt--7">
   <div class="row">
     <div class="col">
-      <div class="card shadow" style="background-color: #222222 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;">
-        <div class="card-header bg-transparent" style="background-color: #333333 !important; border-bottom: 1px solid #444444;">
-          <h3 class="mb-0" *ngIf="mode==1" style="color: #FFD700 !important;">Detalle</h3>
-          <h3 class="mb-0" *ngIf="mode==2" style="color: #FFD700 !important;">Creación</h3>
-          <h3 class="mb-0" *ngIf="mode==3" style="color: #FFD700 !important;">Actualización</h3>
+      <div class="card shadow" style="background-color: #FFF0F5 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(255, 182, 193, 0.4) !important;">
+        <div class="card-header bg-transparent" style="background-color: #FFD1DC !important; border-bottom: 1px solid #FFC0CB;">
+          <h3 class="mb-0" *ngIf="mode==1" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">Detalle</h3>
+          <h3 class="mb-0" *ngIf="mode==2" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">Creación</h3>
+          <h3 class="mb-0" *ngIf="mode==3" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">Actualización</h3>
         </div>
         <form class="form" [formGroup]="theFormGroup">
           <div class="card-body container">
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
               <div class="col-3">ID</div>
               <div class="col-9">
                 <input type="text" class="form-control" formControlName="id" disabled
-                               style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                               style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
               <div class="col-3">Nombre</div>
               <div class="col-9">
                 <input type="text" class="form-control" formControlName="nombre" [disabled]="mode==1"
-                               style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                               style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
                 <div *ngIf="getTheFormGroup['nombre'].errors && (getTheFormGroup['nombre'].dirty || getTheFormGroup['nombre'].touched || trySend)">
-                  <strong *ngIf="getTheFormGroup['nombre'].errors?.['required']" class="msnError" style="color: #dc3545 !important;">Requerido</strong>
-                  <strong *ngIf="getTheFormGroup['nombre'].errors?.['minlength']" class="msnError" style="color: #dc3545 !important;">Mínimo {{ getTheFormGroup['nombre'].errors?.['minlength']?.requiredLength }} caracteres</strong>
-                  <strong *ngIf="getTheFormGroup['nombre'].errors?.['maxlength']" class="msnError" style="color: #dc3545 !important;">Máximo {{ getTheFormGroup['nombre'].errors?.['maxlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="getTheFormGroup['nombre'].errors?.['required']" class="msnError" style="color: #FF69B4 !important;">Requerido</strong>
+                  <strong *ngIf="getTheFormGroup['nombre'].errors?.['minlength']" class="msnError" style="color: #FF69B4 !important;">Mínimo {{ getTheFormGroup['nombre'].errors?.['minlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="getTheFormGroup['nombre'].errors?.['maxlength']" class="msnError" style="color: #FF69B4 !important;">Máximo {{ getTheFormGroup['nombre'].errors?.['maxlength']?.requiredLength }} caracteres</strong>
                 </div>
               </div>
             </div>
             <br>
-            <div class="row" style="color: #AAAAAA !important;">
+            <div class="row" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
               <div class="col-3">Descripción</div>
               <div class="col-9">
                 <input type="text" class="form-control" formControlName="descripcion" [disabled]="mode==1"
-                               style="background-color: #444444 !important; border: 1px solid #555555 !important; color: #FFD700 !important;">
+                               style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
                 <div *ngIf="getTheFormGroup['descripcion'].errors && (getTheFormGroup['descripcion'].dirty || getTheFormGroup['descripcion'].touched || trySend)">
-                  <strong *ngIf="getTheFormGroup['descripcion'].errors?.['required']" class="msnError" style="color: #dc3545 !important;">Requerido</strong>
-                  <strong *ngIf="getTheFormGroup['descripcion'].errors?.['minlength']" class="msnError" style="color: #dc3545 !important;">Mínimo {{ getTheFormGroup['descripcion'].errors?.['minlength']?.requiredLength }} caracteres</strong>
-                  <strong *ngIf="getTheFormGroup['descripcion'].errors?.['maxlength']" class="msnError" style="color: #dc3545 !important;">Máximo {{ getTheFormGroup['descripcion'].errors?.['maxlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="getTheFormGroup['descripcion'].errors?.['required']" class="msnError" style="color: #FF69B4 !important;">Requerido</strong>
+                  <strong *ngIf="getTheFormGroup['descripcion'].errors?.['minlength']" class="msnError" style="color: #FF69B4 !important;">Mínimo {{ getTheFormGroup['descripcion'].errors?.['minlength']?.requiredLength }} caracteres</strong>
+                  <strong *ngIf="getTheFormGroup['descripcion'].errors?.['maxlength']" class="msnError" style="color: #FF69B4 !important;">Máximo {{ getTheFormGroup['descripcion'].errors?.['maxlength']?.requiredLength }} caracteres</strong>
                 </div>
               </div>
             </div>
@@ -48,9 +48,9 @@
             <div class="row">
               <div class="col-3"></div>
               <div class="col-9">
-                <button *ngIf="mode==1" class="btn btn-block" (click)="back()" style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Volver</button>
-                <button *ngIf="mode==2" class="btn btn-block" (click)="create()" [disabled]="theFormGroup.invalid && trySend" style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Crear</button>
-                <button *ngIf="mode==3" class="btn btn-block" (click)="update()" [disabled]="theFormGroup.invalid && trySend" style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);">Actualizar</button>
+                <button *ngIf="mode==1" class="btn btn-block" (click)="back()" style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">Volver</button>
+                <button *ngIf="mode==2" class="btn btn-block" (click)="create()" [disabled]="theFormGroup.invalid && trySend" style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">Crear</button>
+                <button *ngIf="mode==3" class="btn btn-block" (click)="update()" [disabled]="theFormGroup.invalid && trySend" style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">Actualizar</button>
               </div>
             </div>
           </div>

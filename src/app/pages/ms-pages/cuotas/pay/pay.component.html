@@ -1,101 +1,118 @@
-<div class="pay-container">
-    <h2>Payment Form</h2>
+<div class="pay-container" style="background-color: #FFF0F5; padding: 2.5rem; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(255, 182, 193, 0.4); max-width: 600px; margin: 2rem auto; font-family: 'Open Sans', sans-serif;">
+    <h2 style="color: #8B008B; text-align: center; margin-bottom: 2rem; font-family: 'Dancing Script', cursive; font-size: 2.5rem;">Formulario de Pago</h2>
     <form (ngSubmit)="onSubmit()" #paymentForm="ngForm">
-        <!-- Card Details -->
-        <div class="form-group">
-            <label for="cardNumber">Card Number</label>
+        <h4 style="color: #DDA0DD; margin-top: 1.5rem; margin-bottom: 1rem; font-family: 'Dancing Script', cursive;">Detalles de la Tarjeta</h4>
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="cardNumber" style="color: #B22222; font-weight: bold;">Número de Tarjeta</label>
             <input type="text" id="cardNumber" name="cardNumber" ngModel required class="form-control"
-                placeholder="Enter card number">
+                placeholder="Ingrese el número de tarjeta"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="expYear">Expiry Year</label>
-            <input type="text" id="expYear" name="expYear" ngModel required class="form-control" placeholder="YYYY">
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="expYear" style="color: #B22222; font-weight: bold;">Año de Vencimiento</label>
+            <input type="text" id="expYear" name="expYear" ngModel required class="form-control" placeholder="AAAA"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="expMonth">Expiry Month</label>
-            <input type="text" id="expMonth" name="expMonth" ngModel required class="form-control" placeholder="MM">
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="expMonth" style="color: #B22222; font-weight: bold;">Mes de Vencimiento</label>
+            <input type="text" id="expMonth" name="expMonth" ngModel required class="form-control" placeholder="MM"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="cvc">CVC</label>
-            <input type="text" id="cvc" name="cvc" ngModel required class="form-control" placeholder="CVC">
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="cvc" style="color: #B22222; font-weight: bold;">CVC</label>
+            <input type="text" id="cvc" name="cvc" ngModel required class="form-control" placeholder="CVC"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <!-- Customer Information -->
-        <div class="form-group">
-            <label for="customerName">Customer Name</label>
+        <h4 style="color: #DDA0DD; margin-top: 1.5rem; margin-bottom: 1rem; font-family: 'Dancing Script', cursive;">Información del Cliente</h4>
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="customerName" style="color: #B22222; font-weight: bold;">Nombre del Cliente</label>
             <input type="text" id="customerName" name="customerName" ngModel required class="form-control"
-                placeholder="Enter your name">
+                placeholder="Ingrese su nombre"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="lastName">Last Name</label>
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="lastName" style="color: #B22222; font-weight: bold;">Apellido</label>
             <input type="text" id="lastName" name="lastName" ngModel required class="form-control"
-                placeholder="Enter your last name">
+                placeholder="Ingrese su apellido"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="email">Email</label>
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="email" style="color: #B22222; font-weight: bold;">Email</label>
             <input type="email" id="email" name="email" ngModel required class="form-control"
-                placeholder="Enter your email">
+                placeholder="Ingrese su email"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="phone">Phone</label>
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="phone" style="color: #B22222; font-weight: bold;">Teléfono</label>
             <input type="text" id="phone" name="phone" ngModel required class="form-control"
-                placeholder="Enter your phone number">
+                placeholder="Ingrese su número de teléfono"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="docNumber">Document Number</label>
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="docNumber" style="color: #B22222; font-weight: bold;">Número de Documento</label>
             <input type="text" id="docNumber" name="docNumber" ngModel required class="form-control"
-                placeholder="Enter your document number">
+                placeholder="Ingrese su número de documento"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <!-- Due Information -->
-        <div class="form-group">
-            <label for="dueId">Due ID</label>
+        <h4 style="color: #DDA0DD; margin-top: 1.5rem; margin-bottom: 1rem; font-family: 'Dancing Script', cursive;">Información de la Cuota</h4>
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="dueId" style="color: #B22222; font-weight: bold;">ID Cuota</label>
             <input type="text" id="dueId" name="due_id" ngModel required class="form-control"
-                placeholder="Enter due ID">
+                placeholder="Ingrese el ID de la cuota"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="idServicio">Service ID</label>
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="idServicio" style="color: #B22222; font-weight: bold;">ID Servicio</label>
             <input type="text" id="idServicio" name="id_servicio" ngModel required class="form-control"
-                placeholder="Enter service ID">
+                placeholder="Ingrese el ID del servicio"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="valor">Value</label>
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="valor" style="color: #B22222; font-weight: bold;">Valor</label>
             <input type="number" id="valor" name="valor" ngModel required class="form-control"
-                placeholder="Enter value">
+                placeholder="Ingrese el valor"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <!-- Additional Payment Metadata -->
-        <div class="form-group">
-            <label for="description">Description</label>
+        <h4 style="color: #DDA0DD; margin-top: 1.5rem; margin-bottom: 1rem; font-family: 'Dancing Script', cursive;">Detalles Adicionales del Pago</h4>
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="description" style="color: #B22222; font-weight: bold;">Descripción</label>
             <input type="text" id="description" name="description" ngModel required class="form-control"
-                placeholder="Enter description">
+                placeholder="Ingrese una descripción"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="tax">Tax</label>
-            <input type="number" id="tax" name="tax" ngModel required class="form-control" placeholder="Enter tax">
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="tax" style="color: #B22222; font-weight: bold;">Impuesto</label>
+            <input type="number" id="tax" name="tax" ngModel required class="form-control" placeholder="Ingrese el impuesto"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="taxBase">Tax Base</label>
+        <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="taxBase" style="color: #B22222; font-weight: bold;">Base de Impuestos</label>
             <input type="number" id="taxBase" name="taxBase" ngModel required class="form-control"
-                placeholder="Enter tax base">
+                placeholder="Ingrese la base de impuestos"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <div class="form-group">
-            <label for="dues">Dues</label>
-            <input type="number" id="dues" name="dues" ngModel required class="form-control" placeholder="Enter dues">
+        <div class="form-group" style="margin-bottom: 2rem;">
+            <label for="dues" style="color: #B22222; font-weight: bold;">Cuotas</label>
+            <input type="number" id="dues" name="dues" ngModel required class="form-control" placeholder="Ingrese el número de cuotas"
+                style="background-color: #FCEFF2; border: 1px solid #FFD1DC; color: #8B008B; padding: 0.75rem; border-radius: 0.4rem;">
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid">Pay</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid"
+            style="width: 100%; padding: 1rem; background-color: #FF69B4; border-color: #FF69B4; color: #FFFFFF; font-weight: bold; border-radius: 0.5rem; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3); font-size: 1.2rem;">Pagar</button>
     </form>
 </div>

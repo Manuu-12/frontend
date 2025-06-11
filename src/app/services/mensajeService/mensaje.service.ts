@@ -219,7 +219,7 @@ export class MensajeService {
 
   // Los usuarios sí siguen usando ms-security (puerto 8081)
   searchUsers(query: string): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${environment.url_ms_security}/api/usuarios/search?q=${query}`)
+    return this.http.get<Usuario[]>(`${environment.ms_security}/api/usuarios/search?q=${query}`)
       .pipe(
         catchError(error => {
           console.warn('Endpoint de búsqueda no disponible, usando datos mock');

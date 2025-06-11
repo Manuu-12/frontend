@@ -18,6 +18,7 @@ import { NonAuthenticatedGuard } from './guards/non-authenticated.guard';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MachineApiTrackerInterceptor } from './interceptors/machinery-api-tracker.interceptor';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    
     
   ],
   declarations: [
@@ -41,6 +43,11 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
+    },
+    { // <--- THIS IS THE MISSING PART! ADD THIS BLOCK!
+      provide: HTTP_INTERCEPTORS,
+      useClass: MachineApiTrackerInterceptor,
+      multi: true // Essential for having more than one interceptor
     },
     AuthenticatedGuard,
     NonAuthenticatedGuard

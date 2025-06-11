@@ -1,58 +1,65 @@
-<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #000000 0%, #333333 100%) !important;">
+<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #FFB6C1 0%, #FFC0CB 100%) !important;">
 </div>
 <div class="container-fluid mt--7">
   <div class="row">
     <div class="col">
-      <div class="card shadow" style="background-color: #222222 !important;">
-        <div class="card-header bg-transparent" style="background-color: #333333 !important;">
-          <h3 class="mb-0" *ngIf="mode==1" style="color: #FFD700 !important;">Detalle GPS</h3>
-          <h3 class="mb-0" *ngIf="mode==2" style="color: #FFD700 !important;">Crear GPS</h3>
-          <h3 class="mb-0" *ngIf="mode==3" style="color: #FFD700 !important;">Actualizar GPS</h3>
+      <div class="card shadow" style="background-color: #FFF0F5 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(255, 182, 193, 0.4) !important;">
+        <div class="card-header bg-transparent" style="background-color: #FFD1DC !important; border-bottom: 1px solid #FFC0CB;">
+          <h3 class="mb-0" *ngIf="mode==1" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">Detalle GPS</h3>
+          <h3 class="mb-0" *ngIf="mode==2" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">Crear GPS</h3>
+          <h3 class="mb-0" *ngIf="mode==3" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">Actualizar GPS</h3>
         </div>
         <div class="card-body">
-          <div class="row mb-3">
+          <div class="row mb-3" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
             <div class="col-3">ID</div>
             <div class="col-9">
-              <input type="number" class="form-control" [(ngModel)]="gps.id" disabled>
+              <input type="number" class="form-control" [(ngModel)]="gps.id" disabled
+                style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
             </div>
           </div>
 
-          <div class="row mb-3">
+          <div class="row mb-3" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
             <div class="col-3">Latitud</div>
             <div class="col-9">
               <input type="number" class="form-control" [(ngModel)]="gps.latitud" [disabled]="mode==1" step="any"
-                placeholder="Ej: -4.4697">
-              <small>Valor actual: {{ gps.latitud }}</small>
+                placeholder="Ej: -4.4697"
+                style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
+              <small style="color: #DDA0DD !important;">Valor actual: {{ gps.latitud }}</small>
             </div>
           </div>
 
-          <div class="row mb-3">
+          <div class="row mb-3" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
             <div class="col-3">Longitud</div>
             <div class="col-9">
               <input type="number" class="form-control" [(ngModel)]="gps.longitud" [disabled]="mode==1" step="any"
-                placeholder="Ej: -75.2327">
-              <small>Valor actual: {{ gps.longitud }}</small>
+                placeholder="Ej: -75.2327"
+                style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
+              <small style="color: #DDA0DD !important;">Valor actual: {{ gps.longitud }}</small>
             </div>
           </div>
 
-          <div class="row mb-3">
+          <div class="row mb-3" style="color: #DDA0DD !important; font-family: 'Open Sans', sans-serif;">
             <div class="col-3">Máquina</div>
             <div class="col-9">
-              <select class="form-control" [(ngModel)]="gps.maquina_id" [disabled]="mode==1">
-                <option value="">Seleccione una máquina</option>
-                <option *ngFor="let maquina of maquinas" [value]="maquina.id">
+              <select class="form-control" [(ngModel)]="gps.maquina_id" [disabled]="mode==1"
+                style="background-color: #FCEFF2 !important; border: 1px solid #FFD1DC !important; color: #8B008B !important; font-family: 'Open Sans', sans-serif;">
+                <option value="" style="background-color: #FCEFF2 !important; color: #DDA0DD !important;">Seleccione una máquina</option>
+                <option *ngFor="let maquina of maquinas" [value]="maquina.id" style="background-color: #FCEFF2 !important; color: #8B008B !important;">
                   ID: {{ maquina.id }} - {{ maquina.marca || 'Sin marca' }}
                 </option>
               </select>
-              <small>Valor actual: {{ gps.maquina_id }}</small>
+              <small style="color: #DDA0DD !important;">Valor actual: {{ gps.maquina_id }}</small>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-12">
-              <button *ngIf="mode==1" class="btn btn-secondary" (click)="back()">Volver</button>
-              <button *ngIf="mode==2" class="btn btn-primary" (click)="create()">Crear</button>
-              <button *ngIf="mode==3" class="btn btn-success" (click)="update()">Actualizar</button>
+            <div class="col-12 text-center">
+              <button *ngIf="mode==1" class="btn mx-2" (click)="back()"
+                style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">Volver</button>
+              <button *ngIf="mode==2" class="btn mx-2" (click)="create()"
+                style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">Crear</button>
+              <button *ngIf="mode==3" class="btn mx-2" (click)="update()"
+                style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">Actualizar</button>
             </div>
           </div>
         </div>

@@ -1,20 +1,9 @@
-<div class="header bg-gradient-dark py-7 py-lg-8"
-  style="background: linear-gradient(135deg, #1a1a1a, #2d2d2d); border-bottom: 1px solid #444;">
-  <div class="container">
-    <div class="header-body text-center mb-7">
-      <div class="row justify-content-center">
-        <div class="col-lg-5 col-md-6">
-          <h1 class="text-light" style="font-family: 'Playfair Display', serif;">Welcome!</h1>
-          <p class="text-lead text-light" style="font-family: 'Lora', serif;">
-            Use these awesome forms to login or create new account in your project for free.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="header py-7 py-lg-8"
+  style="background: linear-gradient(87deg, #D8BFD8 0%, #F8C8DC 100%) !important; border-bottom: 1px solid #B088B0;">
+  
   <div class="separator separator-bottom separator-skew zindex-100">
     <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <polygon class="fill-default" points="2560 0 2560 100 0 100" style="fill: #1a1a1a;"></polygon>
+      <polygon class="fill-default" points="2560 0 2560 100 0 100" style="fill: #D8BFD8;"></polygon>
     </svg>
   </div>
 </div>
@@ -22,84 +11,82 @@
   <div class="row justify-content-center">
     <div class="col-lg-5 col-md-7">
       <div class="card shadow border-0"
-        style="background-color: #2d2d2d; border: 1px solid #444; border-radius: 10px;">
-        <div class="card-header bg-transparent pb-5" style="border-bottom: 1px solid #444;">
+        style="background-color: #F0E6F2; border: 1px solid #B088B0; border-radius: 10px;">
+        <div class="card-header bg-transparent pb-5" style="border-bottom: 1px solid #B088B0;">
           <div class="text-muted text-center mt-2 mb-3">
-            <small class="text-light" style="font-family: 'Lora', serif;">Sign in with</small>
+            <small class="text-dark" style="font-family: 'Lora', serif;">Sign in with</small>
           </div>
           <div class="btn-wrapper text-center">
             <a href="javascript:void(0)" class="btn btn-neutral btn-icon"
-              style="background-color: #333; border: 1px solid #444; color: #d4af37; transition: all 0.3s;">
+              style="background-color: #B088B0; border: 1px solid #D8BFD8; color: #F8C8DC; transition: all 0.3s;">
               <span class="btn-inner--icon"><img src="./assets/img/icons/common/github.svg"
-                  style="filter: brightness(0.9);"></span>
+                  style="filter: invert(1) brightness(1.5);"></span>
               <span class="btn-inner--text" style="font-family: 'Lora', serif;">Github</span>
             </a>
             <a href="javascript:void(0)" class="btn btn-neutral btn-icon"
-              style="background-color: #333; border: 1px solid #444; color: #d4af37; transition: all 0.3s;">
+              style="background-color: #B088B0; border: 1px solid #D8BFD8; color: #F8C8DC; transition: all 0.3s;">
               <span class="btn-inner--icon"><img src="./assets/img/icons/common/google.svg"
-                  style="filter: brightness(0.9);"></span>
+                  style="filter: invert(1) brightness(1.5);"></span>
               <span class="btn-inner--text" style="font-family: 'Lora', serif;">Google</span>
             </a>
           </div>
         </div>
         <div class="card-body px-lg-5 py-lg-5">
           <div class="text-center text-muted mb-4">
-            <small class="text-light" style="font-family: 'Lora', serif;">Or sign in with credentials</small>
+            <small class="text-dark" style="font-family: 'Lora', serif;">Or sign in with credentials</small>
           </div>
-          <div class="text-center mb-4">
-            <img src="./assets/img/brand/tipee.png" class="navbar-brand-img" alt="Your Brand Logo"
-              style="max-height: 100px; filter: brightness(0.9);"> </div>
+          
           <form role="form">
             <div class="form-group mb-3">
               <div class="input-group input-group-alternative"
-                style="background-color: #333; border: 1px solid #444; border-radius: 20px;">
+                style="background-color: #B088B0; border: 1px solid #D8BFD8; border-radius: 20px;">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="background-color: transparent; border: none; color: #d4af37;">
+                  <span class="input-group-text" style="background-color: transparent; border: none; color: #F8C8DC;">
                     <i class="ni ni-email-83"></i>
                   </span>
                 </div>
-                <input class="form-control text-light" placeholder="Email" type="email" [(ngModel)]="user.email"
+                <input class="form-control text-dark" placeholder="Email" type="email" [(ngModel)]="user.email"
                   name="email" style="background-color: transparent; border: none; font-family: 'Lora', serif;">
               </div>
             </div>
             <div class="form-group">
               <div class="input-group input-group-alternative"
-                style="background-color: #333; border: 1px solid #444; border-radius: 20px;">
+                style="background-color: #B088B0; border: 1px solid #D8BFD8; border-radius: 20px;">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="background-color: transparent; border: none; color: #d4af37;">
+                  <span class="input-group-text" style="background-color: transparent; border: none; color: #F8C8DC;">
                     <i class="ni ni-lock-circle-open"></i>
                   </span>
                 </div>
-                <input class="form-control text-light" placeholder="Password" type="password" [(ngModel)]="user.password"
+                <input class="form-control text-dark" placeholder="Password" type="password" [(ngModel)]="user.password"
                   name="password" style="background-color: transparent; border: none; font-family: 'Lora', serif;">
               </div>
             </div>
             <div class="form-group" *ngIf="requiresTwoFactor">
               <div class="input-group input-group-alternative"
-                style="background-color: #333; border: 1px solid #444; border-radius: 20px;">
+                style="background-color: #B088B0; border: 1px solid #D8BFD8; border-radius: 20px;">
                 <div class="input-group-prepend">
-                  <span class="input-group-text" style="background-color: transparent; border: none; color: #d4af37;">
+                  <span class="input-group-text" style="background-color: transparent; border: none; color: #F8C8DC;">
                     <i class="ni ni-key-25"></i>
                   </span>
                 </div>
-                <input class="form-control text-light" placeholder="Two-Factor Code" type="text" [(ngModel)]="twoFactorCode"
+                <input class="form-control text-dark" placeholder="Two-Factor Code" type="text" [(ngModel)]="twoFactorCode"
                   name="twoFactorCode" style="background-color: transparent; border: none; font-family: 'Lora', serif;">
               </div>
             </div>
             <div class="custom-control custom-control-alternative custom-checkbox">
               <input class="custom-control-input" id="customCheckLogin" type="checkbox">
               <label class="custom-control-label" for="customCheckLogin">
-                <span class="text-muted text-light" style="font-family: 'Lora', serif;">Remember me</span>
+                <span class="text-muted text-dark" style="font-family: 'Lora', serif;">Remember me</span>
               </label>
             </div>
             <div class="text-center">
               <button type="button" class="btn my-4" (click)="login()"
-                style="background: linear-gradient(135deg, #d4af37, #b8860b); border: none; color: #1a1a1a; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">Sign
+                style="background: linear-gradient(135deg, #F8C8DC, #D8BFD8); border: none; color: #000000; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">Sign
                 in</button>
             </div>
             <div class="text-center" *ngIf="requiresTwoFactor">
               <button type="button" class="btn my-4" (click)="validateTwoFactorCode()"
-                style="background: linear-gradient(135deg, #d4af37, #b8860b); border: none; color: #1a1a1a; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">Validate
+                style="background: linear-gradient(135deg, #F8C8DC, #D8BFD8); border: none; color: #000000; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">Validate
                 Code</button>
             </div>
           </form>
@@ -107,11 +94,11 @@
       </div>
       <div class="row mt-3">
         <div class="col-6">
-          <a href="javascript:void(0)" class="text-light" style="font-family: 'Lora', serif;"><small>Forgot
+          <a href="javascript:void(0)" class="text-dark" style="font-family: 'Lora', serif;"><small>Forgot
               password?</small></a>
         </div>
         <div class="col-6 text-right">
-          <a href="javascript:void(0)" class="text-light" style="font-family: 'Lora', serif;"><small>Create new
+          <a href="javascript:void(0)" class="text-dark" style="font-family: 'Lora', serif;"><small>Create new
               account</small></a>
         </div>
       </div>

@@ -46,7 +46,7 @@ export class SeguridadService {
 
   // Primera fase de login con email y password
   login(email: string, password: string): Observable<RespuestaLogin> {
-    return this.http.post<any>(`${environment.url_ms_security}/api/public/security/login`, {
+    return this.http.post<any>(`${environment.ms_security}/api/public/security/login`, {
       email,
       password
     }).pipe(
@@ -75,7 +75,7 @@ export class SeguridadService {
 
   // Segunda fase de login con código 2FA
   validateTwoFactor(code2FA: string): Observable<RespuestaLogin> {
-    return this.http.post<any>(`${environment.url_ms_security}/api/public/security/login/validate/${code2FA}`, {}).pipe(
+    return this.http.post<any>(`${environment.ms_security}/api/public/security/login/validate/${code2FA}`, {}).pipe(
       map(response => {
         console.log('Respuesta 2FA:', response);
         let parsedResponse: RespuestaLogin;
@@ -104,7 +104,7 @@ export class SeguridadService {
   }
 
   validateTwoFactorCode(twoFactorCode: string): Observable<any> {
-    return this.http.post<any>(`${environment.url_ms_security}/api/public/security/login/validate/${twoFactorCode}`, {}).pipe(
+    return this.http.post<any>(`${environment.ms_security}/api/public/security/login/validate/${twoFactorCode}`, {}).pipe(
       map(response => {
         if (response.token) {
           localStorage.setItem('userSession', JSON.stringify(response));

@@ -1,113 +1,94 @@
-<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #000000 0%, #333333 100%) !important;">
+<div class="header pb-8 pt-5 pt-md-8" style="background: linear-gradient(87deg, #FFB6C1 0%, #FFC0CB 100%) !important;">
 </div>
 <div class="container-fluid mt--7">
   <div class="row">
     <div class="col">
-      <div class="card shadow" style="background-color: #222222 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;">
-        <div class="card-header bg-transparent" style="background-color: #333333 !important; border-bottom: 1px solid #444444;">
+      <div class="card shadow" style="background-color: #FFF0F5 !important; border-radius: 0.8rem; box-shadow: 0 1rem 3rem rgba(255, 182, 193, 0.4) !important;">
+        <div class="card-header bg-transparent" style="background-color: #FFD1DC !important; border-bottom: 1px solid #FFC0CB;">
           <div class="d-flex justify-content-between align-items-center">
-            <h3 class="mb-0" style="color: #FFD700 !important;">
+            <h3 class="mb-0" style="color: #8B008B !important; font-family: 'Dancing Script', cursive;">
               <i class="fa fa-comments mr-2"></i>Tus Conversaciones
             </h3>
             <div>
               <button class="btn btn-sm mr-2" (click)="refreshConversations()" [disabled]="isLoading"
-                      style="background-color: #28a745 !important; border-color: #28a745 !important; color: white !important;">
+                      style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: white !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.2);">
                 <i class="fa fa-refresh" [class.fa-spin]="isLoading"></i> Actualizar
               </button>
               <button class="btn btn-sm" (click)="navigateToCreate()"
-                      style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold;">
+                      style="background-color: #FFD1DC !important; border-color: #FFC0CB !important; color: #8B008B !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 209, 220, 0.2);">
                 <i class="fa fa-plus"></i> Buscar Usuario
               </button>
             </div>
           </div>
         </div>
-        
-        <div class="card-body p-0" style="background-color: #222222 !important;">
-          <!-- Loading State -->
+
+        <div class="card-body p-0" style="background-color: #FFF0F5 !important;">
           <div *ngIf="isLoading" class="text-center py-4">
-            <div class="spinner-border text-warning" role="status">
+            <div class="spinner-border" role="status" style="color: #FF69B4 !important;">
               <span class="sr-only">Cargando conversaciones...</span>
             </div>
-            <p class="mt-2" style="color: #AAAAAA;">Cargando conversaciones...</p>
+            <p class="mt-2" style="color: #DDA0DD; font-family: 'Open Sans', sans-serif;">Cargando conversaciones...</p>
           </div>
 
-          <!-- Empty State -->
           <div *ngIf="!isLoading && userConversations.length === 0" class="text-center py-5">
-            <i class="fa fa-comments-o fa-3x mb-3" style="color: #666666;"></i>
-            <h5 style="color: #AAAAAA;">No tienes conversaciones activas</h5>
-            <p style="color: #666666;">Inicia una nueva conversación para comenzar a chatear</p>
+            <i class="fa fa-comments-o fa-3x mb-3" style="color: #FFC0CB;"></i>
+            <h5 style="color: #DDA0DD; font-family: 'Open Sans', sans-serif;">No tienes conversaciones activas</h5>
+            <p style="color: #FFC0CB; font-family: 'Open Sans', sans-serif;">Inicia una nueva conversación para comenzar a chatear</p>
             <button class="btn" (click)="navigateToCreate()"
-                    style="background-color: #FFD700 !important; border-color: #FFD700 !important; color: #000000 !important; font-weight: bold;">
+                    style="background-color: #FF69B4 !important; border-color: #FF69B4 !important; color: #FFFFFF !important; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(255, 105, 180, 0.3);">
               <i class="fa fa-plus"></i> Buscar Usuarios
             </button>
           </div>
 
-          <!-- Conversations List -->
           <div *ngIf="!isLoading && userConversations.length > 0">
-            <div *ngFor="let conversation of userConversations; let i = index" 
+            <div *ngFor="let conversation of userConversations; let i = index"
                  class="conversation-item p-3 border-bottom cursor-pointer"
-                 style="border-bottom: 1px solid #444444 !important; transition: background-color 0.2s;"
+                 style="border-bottom: 1px solid #FFD1DC !important; transition: background-color 0.2s;"
                  (click)="edit(getUserId(conversation))"
-                 (mouseenter)="$event.target.style.backgroundColor='#333333'"
+                 (mouseenter)="$event.target.style.backgroundColor='#FCEFF2'"
                  (mouseleave)="$event.target.style.backgroundColor='transparent'">
-              
+
               <div class="d-flex align-items-center">
-                <!-- Avatar -->
                 <div class="avatar-container mr-3 position-relative">
                   <div class="rounded-circle d-flex align-items-center justify-content-center"
-                       style="width: 50px; height: 50px; background-color: #FFD700; color: #000; font-weight: bold; font-size: 18px;">
+                       style="width: 50px; height: 50px; background-color: #FFD1DC; color: #8B008B; font-weight: bold; font-size: 18px; font-family: 'Open Sans', sans-serif;">
                     {{ getUserName(conversation).charAt(0).toUpperCase() }}
                   </div>
-                  <!-- Indicador de mensajes no leídos -->
                   <span *ngIf="conversation.unread_count && conversation.unread_count > 0"
                         class="badge badge-danger position-absolute"
-                        style="top: -5px; right: -5px; background-color: #dc3545 !important;">
+                        style="top: -5px; right: -5px; background-color: #FF1493 !important; font-family: 'Open Sans', sans-serif;">
                     {{ conversation.unread_count }}
                   </span>
                 </div>
 
-                <!-- Información de la conversación -->
                 <div class="flex-grow-1">
                   <div class="d-flex justify-content-between align-items-start">
                     <div>
-                      <!-- Nombre del usuario -->
-                      <h6 class="mb-1" style="color: #FFD700 !important; font-weight: bold;">
+                      <h6 class="mb-1" style="color: #FF69B4 !important; font-weight: bold; font-family: 'Open Sans', sans-serif;">
                         {{ getUserName(conversation) }}
                       </h6>
-                      
-                      <!-- Último mensaje -->
-                      <p class="mb-0 text-truncate" 
-                         style="color: #AAAAAA !important; max-width: 300px; font-size: 14px;">
+
+                      <p class="mb-0 text-truncate"
+                         style="color: #DDA0DD !important; max-width: 300px; font-size: 14px; font-family: 'Open Sans', sans-serif;">
                         {{ conversation.last_message_content || 'No hay mensajes' }}
                       </p>
                     </div>
 
-                    <!-- Timestamp y acciones -->
                     <div class="d-flex flex-column align-items-end">
-                      <small style="color: #666666 !important; font-size: 12px;">
+                      <small style="color: #FFC0CB !important; font-size: 12px; font-family: 'Open Sans', sans-serif;">
                         {{ formatTimestamp(conversation.last_message_timestamp) }}
                       </small>
-                      
-                      <!-- Botón para ocultar conversación -->
-                      <button class="btn btn-sm mt-1" 
+
+                      <button class="btn btn-sm mt-1"
                               (click)="delete(getUserId(conversation)); $event.stopPropagation()"
-                              style="background: none; border: none; color: #666666; padding: 2px;"
-                              title="Ocultar conversación">
+                              style="background: none; border: none; color: #FFC0CB; padding: 2px; transition: color 0.2s;"
+                              title="Ocultar conversación"
+                              (mouseenter)="$event.target.style.color='#FF69B4'"
+                              (mouseleave)="$event.target.style.color='#FFC0CB'">
                         <i class="fa fa-times"></i>
                       </button>
                     </div>
                   </div>
                 </div>
 
-                <!-- Flecha indicadora -->
                 <div class="ml-2">
-                  <i class="fa fa-chevron-right" style="color: #666666;"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
