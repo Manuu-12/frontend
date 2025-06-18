@@ -7,19 +7,21 @@ import { SeguridadService } from '../services/seguridadService/seguridadService'
   providedIn: 'root'
 })
 export class NonAuthenticatedGuard implements CanActivate {
-  constructor(private seguridadService: SeguridadService) { }
-  private router: Router;
+  // ¡Correcto: Inyecta el Router aquí!
+  constructor(
+    private seguridadService: SeguridadService,
+    private router: Router // <--- ¡Añade esto!
+  ) { }
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (this.seguridadService.existSession) {
-      this.router.navigate(["/tablero"])
-
+      this.router.navigate(["/chats/list"]); 
       return false;
     } else {
       return true;
     }
   }
-
 }
